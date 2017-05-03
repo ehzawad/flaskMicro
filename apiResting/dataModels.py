@@ -18,3 +18,9 @@ class Review(Model):
 
     class Meta:
         database = VirtualDB
+
+
+def initialize():
+    VirtualDB.connect()
+    VirtualDB.create_tables([Course, Review])
+    VirtualDB.close()
